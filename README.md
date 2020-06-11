@@ -11,7 +11,7 @@ The ```outerspace``` project consists of two big parts. One is graphic client, p
 ### Installation
 #### Requirements
 * ```python-2.7```
-* ```pygame-1.9.2``` (for game client only)
+* ```pygame-1.9.2``` (for client only)
 * ```passlib-1.7``` (for server only)
 
 #### Python
