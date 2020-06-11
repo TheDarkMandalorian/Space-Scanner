@@ -3,10 +3,10 @@
 
 # About Outer Space
 
-Outer Space is turn-base 4X multiplayer on-line strategy game. Your goal is to become an Imperator of the Galaxy, racing other human players for supremacy via diplomacy, economic strength of you empire and research. And if all other means fail, you may subdue your neighbours with you powerful fleets and superior strategic thinking.
+Your goal is to become an Imperator of the Galaxy, racing other human players for supremacy via diplomacy, economic strength of you empire and research. And if all other means fail, you may subdue your neighbours with you powerful fleets and superior strategic thinking.
 
 ## Getting started
-The ```outerspace``` project consists of two big parts. One is graphic client, providing everything player needs to enjoy the game. Then there is a server side, with game server itself and AI framework.
+The ```outerspace``` project consists of two big parts. One is graphic client, providing everything player needs. Then there is a server side, with the server itself and AI framework.
 
 ### Installation
 #### Requirements
@@ -21,7 +21,7 @@ Outerspace is written in Python2, ```Python 2.7``` to be more specific. You can 
 *Outer Space client is able to install the PyGame requirement automatically. It will be installed  for active user only, so no administrator rights are needed.*
 
 #### PassLib
-To maintain security of player passwords saved on the server, passlib is required by the server part. As it is security feature and should be controlled by administrator, game won't install it automatically. You can install it using ```pip``` command.
+To maintain security of player passwords saved on the server, passlib is required by the server part. As it is security feature and should be controlled by administrator, program won't install it automatically. You can install it using ```pip``` command.
 
 ```
 python2 -m pip install --user -U passlib
@@ -32,7 +32,7 @@ The Outer Space itself has no specific needs, all you have to do is to clone git
 
 ### Running Outer Space
 
-For playing on official (default) server, all you have to do is to run ```outerspace.py``` script without any parameters (On *Windows*, it should be enough to execute the script from a file browser.) In case of running game from command line, all needed is
+For playing on official (default) server, all you have to do is to run ```outerspace.py``` script without any parameters (On *Windows*, it should be enough to execute the script from a file browser.) In the case of running from command line, all needed is
 
 ```
 python2 ./outerspace.py
@@ -49,8 +49,8 @@ this will require administrator access, though.
 
 *NOTE (Windows):* It is highly advisable to follow steps described in [Using Python on Windows guide](https://docs.python.org/2.7/using/windows.html).
 
-### Running a game client
-In case the Server is running on ```non-default remote machine```, you need to know IP address of the Server and port on which the Server listens. Then you run the game with command
+### Running a client
+In case the Server is running on ```non-default remote machine```, you need to know IP address of the Server and port on which the Server listens. Then you run the program with command
 
 ```
 python2 ./outerspace.py client --server HOSTNAME:PORT_SERVER
@@ -65,7 +65,7 @@ python2 ./outerspace.py client --local
 ### Server side
 To achieve full functionality, you have to start main Server, then you have to set up turn ticks of the server as well as periodic triggering of the AI subsystem.
 
-#### Game server
+#### Running the server server
 Server can be simply run with command
 
 ```
@@ -74,7 +74,7 @@ python2 ./outerspace.py server
 which will start server listening to default TCP port 9080 on all networks.
 
 
-#### Ticking game server
+#### Ticking server
 For triggering one turn, you have to run
 ```
 python2 ./tools/osclient_cli.py --turns=1 admin
@@ -89,7 +89,7 @@ python2 ./tools/osclient_cli.py --starttime admin
 ```
 
 #### Setting up AI
-AI is implemented as a headless client, utilizing same API the graphics client does. That means it has to be triggered every turn to connect to the server and issue new commands based on current situation. Also ```./outerspace.py``` script provides two ways of running an AI. In this guide only ```ai-pool``` is interesting for us, as it goes through all AI players currently active in the game. Also running this on remote machine would be a bit tricky, as it consumes data dump in the server config directory.
+AI is implemented as a headless client, utilizing same API the graphics client does. That means it has to be triggered every turn to connect to the server and issue new commands based on current situation. Also ```./outerspace.py``` script provides two ways of running an AI. In this guide only ```ai-pool``` is interesting for us, as it goes through all AI players currently active in the software. Also running this on remote machine would be a bit tricky, as it consumes data dump in the server config directory.
 
 ```
 python2 ./outerspace.py ai-pool
